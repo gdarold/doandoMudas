@@ -1,0 +1,16 @@
+.idea
+*.sqlite3
+venv
+*.pyc
+gestao_rh/__pycache__/
+static
+gestao_rh.pem
+media
+uwsgi.ini
+uwsgi_params
+*.bak
+*.dat
+*.pid
+*.dir
+local_settings.py
+.env
