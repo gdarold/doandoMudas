@@ -23,5 +23,6 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('login/', auth_views.LoginView.as_view(),name='login'),
     path('', include('apps.core.urls')),
+    path('', include('apps.endereco.urls')),
 
 ]

@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from decouple import config
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -20,12 +22,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '0*fvcn9ps)iz8(v6u@kvpzv2$#pbvq&aj5pa$i6hf_1(@kkh@n'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG',default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
+
+
+
 
 
 # Application definition
@@ -39,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrapform',
+    'localflavor',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -46,6 +52,14 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
 
     'apps.core',
+    'apps.doacao',
+    'apps.endereco',
+    'apps.pessoa',
+    'apps.tipos_doacao',
+    'apps.tipos_plantas',
+
+
+
 
 ]
 
@@ -115,9 +129,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'pt-br'
+
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -131,6 +146,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "staticfiles"),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+MEDIA_URL = '/media/'
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
 LOGIN_REDIRECT_URL = 'home'
