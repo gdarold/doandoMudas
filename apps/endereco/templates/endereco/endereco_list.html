@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+    List
+<br>
+    {% for endereco in object_list %}
+        <a href=" ">
+            {{ logradouro }}</a>
+
+        <a href="">Deletar</a>
+    <br>
+    {% endfor %}
+    <a href="{% url 'endereco' %}" class="btn btn-primary">Novo</a>
+{% endblock %}

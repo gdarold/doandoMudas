@@ -1,9 +1,8 @@
 from django.conf.urls import url
-from django.contrib import admin
-
-from . import views
-
+from .views import EnderecoCreate, EnderecoList
 
 urlpatterns = [
-    url('endereco/', views.AddressFormView.as_view(), name='endereco')
+    url('endereco/new/', EnderecoCreate.as_view(), name='endereco'),
+    url('endereco/list/', EnderecoList.as_view(), name='endereco_list'),
+
 ]
