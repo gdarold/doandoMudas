@@ -55,8 +55,8 @@ INSTALLED_APPS = [
     'apps.doacao',
     'apps.endereco',
     'apps.pessoa',
-    'apps.tipos_doacao',
-    'apps.tipos_plantas',
+    'apps.tipo_doacao',
+    'apps.tipo_planta',
 
 
 
