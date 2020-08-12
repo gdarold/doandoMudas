@@ -24,5 +24,6 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(),name='login'),
     path('', include('apps.core.urls')),
     path('endereco/', include('apps.endereco.urls')),
+    path('pessoa/', include('apps.pessoa.urls')),
 
 ]

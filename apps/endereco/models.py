@@ -1,12 +1,13 @@
-from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
 from django.urls import reverse
 
+from apps.pessoa.models import Pessoa
+
 
 class Endereco(models.Model):
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    usuario = models.ForeignKey(Pessoa, on_delete=models.CASCADE, null=True, blank=True)
     cep = models.CharField(max_length=9)
     logradouro = models.CharField(max_length=255)
     bairro = models.CharField(max_length=255)

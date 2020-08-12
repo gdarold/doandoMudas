@@ -5,8 +5,7 @@
     List
 <br>
     {% for endereco in object_list %}
-        <a href=" ">
-            {{ endereco }}</a>
+        <a href="{% url 'edit_endereco'  endereco.id%}">{{ endereco }}</a>
 
 
     <br>

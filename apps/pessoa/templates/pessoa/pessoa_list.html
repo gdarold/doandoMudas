@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+
+<br>
+    {% for pessoas in object_list %}
+        <a href="">
+         {{ pessoas }}</a>
+        <a href="{% url 'delete_pessoas' pessoas.pk %} ">Deletar</a>
+    <br>
+
+
+    <br>
+    {% endfor %}
+    <a href="{% url 'pessoa' %}" class="btn btn-primary">Novo</a>
+{% endblock %}
