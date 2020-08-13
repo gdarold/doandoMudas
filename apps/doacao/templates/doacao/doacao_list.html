@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+    List
+<br>
+    {% for doar in object_list %}
+        <a href=" ">
+            {{ doar }}</a>
+        <a href=" ">Deletar</a>
+    <br>
+    {% endfor %}
+    <a href="{% url 'new_doacoes' %}" class="btn btn-primary">Novo</a>
+{% endblock %}

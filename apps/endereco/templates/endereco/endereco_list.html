@@ -5,10 +5,10 @@
     List
 <br>
     {% for endereco in object_list %}
-        <a href="{% url 'edit_endereco'  endereco.id%}">{{ endereco }}</a>
-
-
+        <a href="{% url 'update_enderecos' endereco.id %}">
+            {{ endereco }}</a>
+        <a href="{% url 'delete_enderecos' endereco.id %}">Deletar</a>
     <br>
     {% endfor %}
-    <a href="{% url 'endereco' %}" class="btn btn-primary">Novo</a>
+    <a href="{% url 'new_enderecos' %}" class="btn btn-primary">Novo</a>
 {% endblock %}

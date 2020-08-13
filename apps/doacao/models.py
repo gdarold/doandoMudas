@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+from django.urls import reverse
+
 from apps.pessoa.models import Pessoa
 from apps.tipo_doacao.models import Tipo_doacao
 from apps.tipo_planta.models import Tipo_planta
@@ -18,6 +20,9 @@ class Doacao(models.Model):
     custo = models.DecimalField(max_digits=4, decimal_places=2, default=1)
     status = models.BooleanField(default=True)
 
+
+    def get_absolute_url(self):
+        return reverse('list_doacoes')
 
     def __str__(self):
         return self.descricao

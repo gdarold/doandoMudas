@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from decouple import config
 
@@ -33,6 +34,7 @@ ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,7 +50,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
+
     'allauth.socialaccount.providers.google',
 
     'apps.core',

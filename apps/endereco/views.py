@@ -1,6 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, UpdateView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
 from apps.endereco.models import Endereco
 
@@ -26,3 +26,10 @@ class EnderecoList(ListView):
 
 class EnderecoEdit(UpdateView):
     model = Endereco
+    fields = ['usuario', 'cep', 'logradouro', 'bairro', 'numero', 'complemento', 'cidade', 'uf']
+
+
+class EnderecoDelete(DeleteView):
+    model = Endereco
+
+    success_url = reverse_lazy('list_enderecos')

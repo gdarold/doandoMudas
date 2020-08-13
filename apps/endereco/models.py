@@ -17,8 +17,8 @@ class Endereco(models.Model):
     uf = models.CharField(max_length=255)
 
     def get_absolute_url(self):
-        return reverse('list_endereco')
+        return reverse('list_enderecos')
 
 
     def __str__(self):
-        return self.logradouro
+        return self.usuario.nome
