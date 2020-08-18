@@ -4,14 +4,54 @@
 
 
 <br>
-    {% for pessoas in object_list %}
-        <a href="">
-         {{ pessoas }}</a>
-        <a href="{% url 'delete_pessoas' pessoas.pk %} ">Deletar</a>
-    <br>
+
+        <table class="table table-hover table-bordered table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Usuário</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Sobrenome</th>
+                    <th scope="col">Cpf</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Celular</th>
+
+                    <th scope="col">Editar</th>
+                    <th scope="col">Deletar</th>
 
 
-    <br>
-    {% endfor %}
+                </tr>
+
+
+            </thead>
+            <tbody>
+                {% for person in object_list %}
+                    <tr>
+                        <td>{{ person.id }}</td>
+                        <td>{{ person.usuario }}</td>
+                        <td>{{ person.nome }}</td>
+                        <td>{{ person.sobrenome }}</td>
+                        <td>{{ person.cpf }}</td>
+                        <td>{{ person.email }}</td>
+                        <td>{{ person.telefone }}</td>
+
+
+                        <td><a href="" class="edit-item">
+                                <i class="fas fa-edit"></i></a></td>
+                        <td><a href="" class="trash-item">
+                            <i class="fas fa-trash"></i></a></td>
+
+
+                    </tr>
+
+                {% endfor %}
+
+
+
+            </tbody>
+
+
+        </table>
+
     <a href="{% url 'pessoa' %}" class="btn btn-primary">Novo</a>
 {% endblock %}
