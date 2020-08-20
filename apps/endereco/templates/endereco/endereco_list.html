@@ -2,13 +2,59 @@
 
 {% block main %}
 
-    List
-<br>
-    {% for endereco in object_list %}
-        <a href="{% url 'update_enderecos' endereco.id %}">
-            {{ endereco }}</a>
-        <a href="{% url 'delete_enderecos' endereco.id %}">Deletar</a>
-    <br>
-    {% endfor %}
+    <table class="table table-hover table-bordered table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Cep</th>
+                    <th scope="col">Rua</th>
+                    <th scope="col">Numero</th>
+                    <th scope="col">Complemento</th>
+                    <th scope="col">Bairro</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Deletar</th>
+
+
+                </tr>
+
+
+            </thead>
+            <tbody>
+
+
+
+
+
+        {% for endereco in object_list %}
+            <tr>
+                        <td>{{ endereco.cep }}</td>
+                        <td>{{ endereco.logradouro }}</td>
+                        <td>{{ endereco.numero }}</td>
+                        <td>{{ endereco.complemento }}</td>
+                        <td>{{ endereco.bairro }}</td>
+                        <td>{{ endereco.cidade }}</td>
+                        <td>{{ endereco.uf }}</td>
+
+
+
+                        <td><a href="" class="edit-item">
+                                <i class="fas fa-edit"></i></a></td>
+                        <td><a href="" class="trash-item">
+                            <i class="fas fa-trash"></i></a></td>
+
+
+                    </tr>
+
+                {% endfor %}
+
+
+
+            </tbody>
+
+
+        </table>
+
+
     <a href="{% url 'new_enderecos' %}" class="btn btn-primary">Novo</a>
 {% endblock %}

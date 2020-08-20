@@ -12,7 +12,7 @@ class EnderecoCreate(CreateView):
 
     def form_valid(self, form):
         endereco = form.save(commit = False)
-        endereco.usuario = self.request.user.pessoa
+        endereco.usuario = self.request.user
         endereco.save()
 
 
