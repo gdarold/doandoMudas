@@ -18,6 +18,14 @@ class PessoaCreate(CreateView):
 class PessoaList(ListView):
     model = Pessoa
 
+def Profile(request):
+
+    return render(request, 'profile.html')
+
+class Perfil(ListView):
+    model = Pessoa
+    fields = ['nome', 'sobrenome', 'cpf', 'email', 'celular']
+    success_url = reverse_lazy()
 
 
 class PessoaEdit(UpdateView):
